@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        bootstrap="tests/legacy/bootstrap.php"
+        backupGlobals="false"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        verbose="true"
+>
+    <testsuites>
+        <testsuite name="WooCommerce Test Suite">
+            <directory suffix=".php">./tests/legacy/unit-tests</directory>
+            <directory suffix=".php">./tests/php</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./includes</directory>
+            <file>woocommerce.php</file>
+            <file>uninstall.php</file>
+            <exclude>
+                <directory suffix=".php">./includes/admin/helper/views</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
